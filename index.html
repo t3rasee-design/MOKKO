@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOKKO — Салон красоты</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&display=swap" rel="stylesheet">
+
+<style>
+
+@font-face{
+    font-family:'Gropled';
+    src:url('./gropled-bold.ttf') format('truetype');
+    font-weight:700;
+    font-style:normal;
+}
+
+:root{
+    --bg:#FDEDD7;
+    --text:#5A2F1C;
+    --brown:#4A2B1A;
+    --white:#FFFFFF;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:24px 5%;
+
+    background:rgba(253,237,215,0.94);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(0,0,0,0.06);
+}
+
+.brand{
+    display:flex;
+    flex-direction:column;
+    line-height:0.85;
+}
+
+.brand h1{
+    font-family:'Gropled',sans-serif;
+    font-size:42px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.brand span{
+    font-size:12px;
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:34px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--text);
+    font-size:18px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    opacity:0.6;
+}
+
+.phone{
+    padding:10px 18px;
+    border:1px solid rgba(0,0,0,0.08);
+    border-radius:50px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+
+    background:url('hand.png') center center/cover no-repeat;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    position:relative;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(253,237,215,0.18);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero-logo{
+    width:min(540px,72vw);
+    object-fit:contain;
+}
+
+.book-btn{
+    margin-top:32px;
+
+    background:var(--brown);
+    color:var(--white);
+
+    border:none;
+    border-radius:60px;
+
+    padding:18px 48px;
+
+    font-size:22px;
+    font-weight:800;
+
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.book-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    padding:110px 5%;
+}
+
+.section-title{
+    font-size:64px;
+    font-weight:800;
+    text-transform:uppercase;
+    margin-bottom:60px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:34px;
+}
+
+.card{
+    background:var(--bg);
+
+    border:1px solid rgba(0,0,0,0.06);
+    border-radius:28px;
+
+    padding:34px;
+}
+
+.card h3{
+    font-size:36px;
+    font-weight:800;
+    text-transform:uppercase;
+    margin-bottom:28px;
+}
+
+.price-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:18px;
+
+    padding-bottom:12px;
+
+    border-bottom:1px solid rgba(0,0,0,0.06);
+
+    font-size:16px;
+    font-weight:500;
+    line-height:1.4;
+}
+
+.item span:last-child{
+    white-space:nowrap;
+    font-weight:800;
+}
+
+/* ================= CONTACTS ================= */
+
+.contacts{
+    padding:40px 5% 100px;
+}
+
+.contacts-images{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    margin-bottom:36px;
+}
+
+.contacts-images img{
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    border-radius:28px;
+}
+
+.contact-info{
+    text-align:center;
+}
+
+.contact-info p{
+    font-size:24px;
+    font-weight:500;
+    line-height:1.5;
+}
+
+.contact-info a{
+    display:inline-block;
+    margin-top:18px;
+
+    text-decoration:none;
+    color:var(--text);
+
+    font-size:28px;
+    font-weight:800;
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,0.45);
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    z-index:2000;
+
+    padding:20px;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:420px;
+
+    background:var(--bg);
+
+    border-radius:28px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    top:12px;
+    right:18px;
+
+    font-size:34px;
+    cursor:pointer;
+}
+
+.modal-box h3{
+    font-size:34px;
+    font-weight:800;
+    margin-bottom:28px;
+}
+
+.modal-links{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.modal-links a{
+    background:var(--brown);
+    color:var(--white);
+
+    text-decoration:none;
+
+    padding:16px;
+
+    border-radius:50px;
+
+    font-size:20px;
+    font-weight:800;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:30px;
+    text-align:center;
+
+    border-top:1px solid rgba(0,0,0,0.06);
+
+    font-size:14px;
+    font-weight:500;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    header{
+        flex-direction:column;
+        gap:18px;
+        padding:18px 5%;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:14px;
+    }
+
+    .hero{
+        min-height:92vh;
+    }
+
+    .hero-logo{
+        width:80vw;
+    }
+
+    .section{
+        padding:80px 5%;
+    }
+
+    .section-title{
+        font-size:40px;
+        margin-bottom:36px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        padding:24px;
+    }
+
+    .card h3{
+        font-size:28px;
+    }
+
+    .item{
+        font-size:14px;
+    }
+
+    .contacts-images{
+        grid-template-columns:1fr;
+    }
+
+    .contacts-images img{
+        height:280px;
+    }
+
+    .contact-info p{
+        font-size:20px;
+    }
+
+    .contact-info a{
+        font-size:22px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="brand">
+
+        <h1>MOKKO</h1>
+
+        <span>Салон красоты</span>
+
+    </div>
+
+    <nav>
+
+        <a href="#price">
+            Прайс лист
+        </a>
+
+        <a href="#location">
+            Локация
+        </a>
+
+        <a class="phone" href="tel:+79885276008">
+            +79885276008
+        </a>
+
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <img src="logo.png" alt="MOKKO" class="hero-logo">
+
+        <br>
+
+        <button class="book-btn" id="openModal">
+            Записаться
+        </button>
+
+    </div>
+
+</section>
+
+<section class="section" id="price">
+
+    <h2 class="section-title">
+        Услуги и прайс
+    </h2>
+
+    <div class="grid">
+
+        <!-- МАНИКЮР -->
+
+        <div class="card">
+
+            <h3>Маникюр</h3>
+
+            <div class="price-list">
+
+                <div class="item"><span>Маникюр (Гигиенический)</span><span>1100</span></div>
+
+                <div class="item"><span>Маникюр С Покрытием Гель-Лак</span><span>1900</span></div>
+
+                <div class="item"><span>Наращивание Ногтей До 3</span><span>2500</span></div>
+
+                <div class="item"><span>Наращивание Ногтей Размер От 3 До 5</span><span>2700</span></div>
+
+                <div class="item"><span>Дополнительная Длина</span><span>+200</span></div>
+
+                <div class="item"><span>Гелевая Коррекция</span><span>2300</span></div>
+
+                <div class="item"><span>Укрепление Ногтей</span><span>+200</span></div>
+
+                <div class="item"><span>Дизайн</span><span>От 50</span></div>
+
+                <div class="item"><span>Френч</span><span>400</span></div>
+
+                <div class="item"><span>Снятие Гель-Лака Без Посл. Покрытия</span><span>500</span></div>
+
+                <div class="item"><span>Ремонт Одного Ногтя</span><span>150</span></div>
+
+            </div>
+
+        </div>
+
+        <!-- ПЕДИКЮР -->
+
+        <div class="card">
+
+            <h3>Педикюр</h3>
+
+            <div class="price-list">
+
+                <div class="item"><span>Педикюр С Покрытием Гель-Лак</span><span>2300</span></div>
+
+                <div class="item"><span>Педикюр Без Покрытия</span><span>2000</span></div>
+
+                <div class="item"><span>Педикюр Пальчики С Покрытием Гель-Лак</span><span>1800</span></div>
+
+                <div class="item"><span>Педикюр Пальчики Без Покрытия</span><span>1300</span></div>
+
+                <div class="item"><span>Педикюр Стоп</span><span>1200</span></div>
+
+                <div class="item"><span>Мужской Педикюр Пальчики</span><span>1700</span></div>
+
+                <div class="item"><span>Мужской Педикюр</span><span>2300</span></div>
+
+                <div class="item"><span>Мужской Маникюр</span><span>1100</span></div>
+
+            </div>
+
+        </div>
+
+        <!-- БРОВИ -->
+
+        <div class="card">
+
+            <h3>Брови</h3>
+
+            <div class="price-list">
+
+                <div class="item"><span>Долговременная Укладка</span><span>1100</span></div>
+
+                <div class="item"><span>Долговременная Укладка + Коррекция + Окрашивание</span><span>1700</span></div>
+
+                <div class="item"><span>Долговременная Укладка + Окрашивание</span><span>1400</span></div>
+
+                <div class="item"><span>Коррекция + Окрашивание</span><span>1200</span></div>
+
+                <div class="item"><span>Коррекция (Воск/Пинцет)</span><span>700</span></div>
+
+                <div class="item"><span>Окрашивание Бровей</span><span>700</span></div>
+
+                <div class="item"><span>Ламинирование Ресниц</span><span>1600</span></div>
+
+                <div class="item"><span>Окрашивание Ресниц</span><span>600</span></div>
+
+                <div class="item"><span>Удаление Нежелательных Волос На Лице</span><span>1600</span></div>
+
+            </div>
+
+        </div>
+
+        <!-- ПЕРМАНЕНТ -->
+
+        <div class="card">
+
+            <h3>Перманентный Макияж</h3>
+
+            <div class="price-list">
+
+                <div class="item"><span>Перманент Бровей Пудровое Напыление</span><span>6990</span></div>
+
+                <div class="item"><span>Перманент Бровей Пудровое Напыление (Коррекция)</span><span>3500</span></div>
+
+                <div class="item"><span>Перманент Губ В Акварельной Технике</span><span>6900</span></div>
+
+                <div class="item"><span>Перманент Губ В Акварельной Технике (Коррекция)</span><span>3500</span></div>
+
+                <div class="item"><span>Перманент Межресничного Пространства С Растушевкой Или Без Растушевки</span><span>4490</span></div>
+
+                <div class="item"><span>Перманент Межресничного Пространства С Растушевкой Или Без Растушевки (Коррекция)</span><span>2250</span></div>
+
+                <div class="item"><span>Удаление Лазером Татуажа</span><span>2000</span></div>
+
+            </div>
+
+        </div>
+
+        <!-- РЕСНИЦЫ -->
+
+        <div class="card">
+
+            <h3>Наращивание Ресниц</h3>
+
+            <div class="price-list">
+
+                <div class="item"><span>Классика</span><span>2000</span></div>
+
+                <div class="item"><span>Наращивание Ресниц 2D</span><span>2200</span></div>
+
+                <div class="item"><span>Наращивание Ресниц 3D</span><span>2400</span></div>
+
+                <div class="item"><span>Наращивание Ресниц 4D</span><span>2600</span></div>
+
+                <div class="item"><span>Наращивание Углов</span><span>1800</span></div>
+
+                <div class="item"><span>Нижние Наращивание</span><span>1100</span></div>
+
+                <div class="item"><span>Загущение</span><span>+100</span></div>
+
+                <div class="item"><span>Декоративные (Цветные Вставки, Стразы, Блестки)</span><span>200</span></div>
+
+                <div class="item"><span>Мокрый Эффект, Американка, Рванный, Лучики</span><span>150</span></div>
+
+                <div class="item"><span>Цветные Ресницы Полностью, Аниме</span><span>+250</span></div>
+
+                <div class="item"><span>Снятие Чужой Работы</span><span>+400</span></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contacts" id="location">
+
+    <div class="contacts-images">
+
+        <img src="map.png" alt="Карта">
+
+        <img src="location.png" alt="Локация">
+
+    </div>
+
+    <div class="contact-info">
+
+        <p>
+            г.Краснодар ул.Зиповская 34к2 Внутри Арки
+        </p>
+
+        <a href="tel:+79885276008">
+            +79885276008
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+    MOKKO BEAUTY
+</footer>
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <div class="close" id="closeModal">
+            ×
+        </div>
+
+        <h3>
+            Записаться
+        </h3>
+
+        <div class="modal-links">
+
+            <a href="tel:+79885276008">
+                Позвонить
+            </a>
+
+            <a href="https://wa.me/79885276008" target="_blank">
+                WhatsApp чат
+            </a>
+
+            <a href="https://t.me/+79885276008" target="_blank">
+                Telegram чат
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const modal = document.getElementById('modal');
+const openModal = document.getElementById('openModal');
+const closeModal = document.getElementById('closeModal');
+
+openModal.addEventListener('click', () => {
+    modal.classList.add('active');
+});
+
+closeModal.addEventListener('click', () => {
+    modal.classList.remove('active');
+});
+
+modal.addEventListener('click', (e) => {
+    if(e.target === modal){
+        modal.classList.remove('active');
+    }
+});
+
+</script>
+
+</body>
+</html>
