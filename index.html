@@ -109,6 +109,30 @@ nav a:hover{
     border-radius:50px;
 }
 
+.instagram-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.instagram-link:hover {
+    opacity: 0.6;
+}
+
+.instagram-link svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--text);
+}
+
 /* ================= HERO ================= */
 
 .hero{
@@ -224,6 +248,108 @@ nav a:hover{
     font-weight:800;
 }
 
+/* Блок наращивания */
+.nail-section {
+    background: rgba(74, 43, 26, 0.05);
+    padding: 16px;
+    border-radius: 12px;
+    margin: 16px 0;
+}
+
+.nail-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 14px;
+}
+
+.nail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nail-item:last-child {
+    border-bottom: none;
+}
+
+.nail-count {
+    font-weight: 800;
+    color: var(--brown);
+    font-size: 16px;
+    background: rgba(74, 43, 26, 0.12);
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-right: 8px;
+}
+
+.nail-price {
+    font-weight: 800;
+    color: var(--text);
+}
+
+/* Раздел Фруктовый педикюр внутри блока */
+.fruit-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid rgba(0,0,0,0.08);
+}
+
+.fruit-title {
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    color: var(--brown);
+}
+
+.fruit-brand {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 14px;
+}
+
+.fruit-description {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    color: var(--text);
+}
+
+.fruit-highlights {
+    background: rgba(74, 43, 26, 0.08);
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.fruit-highlights-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--brown);
+    font-size: 13px;
+}
+
+.fruit-highlights-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.fruit-highlights-item::before {
+    content: "✓";
+    font-weight: 800;
+    color: var(--brown);
+    margin-right: 8px;
+}
+
 /* ================= CONTACTS ================= */
 
 .contacts{
@@ -263,6 +389,25 @@ nav a:hover{
 
     font-size:28px;
     font-weight:800;
+}
+
+/* ================= FOOTER NOTE ================= */
+
+.price-footer {
+    padding: 0 5%;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.footer-note {
+    background: rgba(74, 43, 26, 0.08);
+    padding: 30px;
+    border-radius: 16px;
+    border-left: 4px solid var(--brown);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.8;
+    color: var(--brown);
 }
 
 /* ================= MODAL ================= */
@@ -444,6 +589,15 @@ footer{
             +79885276008
         </a>
 
+        <a class="instagram-link" href="https://www.instagram.com/beauty_studio_mokko?stkn=ZXp2dzhkeTJrdWM2" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <circle cx="17.5" cy="6.5" r="1.5"></circle>
+            </svg>
+            MOKKO
+        </a>
+
     </nav>
 
 </header>
@@ -480,33 +634,51 @@ footer{
 
             <div class="price-list">
 
-                <div class="item"><span>Маникюр (Гигиенический)</span><span>1100</span></div>
+                <div class="item"><span>Идеальный ноюд</span><span>2100</span></div>
 
-                <div class="item"><span>Маникюр С Покрытием Гель-Лак</span><span>1900</span></div>
+                <div class="item"><span>Цветное покрытие – настроение в каждом оттенке</span><span>2300</span></div>
 
-                <div class="item"><span>Наращивание Ногтей До 3</span><span>2500</span></div>
+                <div class="item"><span>Френч вечная классика</span><span>2600</span></div>
 
-                <div class="item"><span>Наращивание Ногтей Размер От 3 До 5</span><span>2700</span></div>
+                <div class="nail-section">
+                    <div class="nail-title">Хочу наращивание:</div>
+                    <div class="nail-item">
+                        <span><span class="nail-count">1-3 ногтя</span>(коррекция/наращивание)</span>
+                        <span class="nail-price">2400 / 2500</span>
+                    </div>
+                    <div class="nail-item">
+                        <span><span class="nail-count">3-6 ногтей</span>(коррекция/наращивание)</span>
+                        <span class="nail-price">2600 / 2700</span>
+                    </div>
+                    <div class="nail-item">
+                        <span><span class="nail-count">7-9 ногтей</span>(коррекция/наращивание)</span>
+                        <span class="nail-price">3400 / 3500</span>
+                    </div>
+                </div>
 
-                <div class="item"><span>Дополнительная Длина</span><span>+200</span></div>
+                <div class="item"><span>Маникюр + Снятие до 3</span><span>1500</span></div>
 
-                <div class="item"><span>Гелевая Коррекция</span><span>2300</span></div>
+                <div class="item"><span>Маникюр + Снятие от 3</span><span>1800</span></div>
 
-                <div class="item"><span>Укрепление Ногтей</span><span>+200</span></div>
+                <div class="item"><span>Все включено - Маникюр с покрытием + полный педикюр обработка стоп с покрытием</span><span>5200</span></div>
 
-                <div class="item"><span>Дизайн</span><span>От 50</span></div>
+                <div class="item"><span>Все включено - Маникюр с покрытием + педикюр пальчики с покрытием</span><span>4700</span></div>
 
-                <div class="item"><span>Френч</span><span>400</span></div>
+                <div class="item"><span>Уходовой маникюр</span><span>1100</span></div>
 
-                <div class="item"><span>Снятие Гель-Лака Без Посл. Покрытия</span><span>500</span></div>
+                <div class="item"><span>Снятие и опил формы</span><span>600</span></div>
 
-                <div class="item"><span>Ремонт Одного Ногтя</span><span>150</span></div>
+                <div class="item"><span>Мужской маникюр</span><span>1300</span></div>
+
+                <div class="item"><span>Детский маникюр</span><span>400</span></div>
+
+                <div class="item"><span>Японский маникюр</span><span>1600</span></div>
 
             </div>
 
         </div>
 
-        <!-- ПЕДИКЮР -->
+        <!-- ПЕДИКЮР + ФРУКТОВЫЙ ПЕДИКЮР -->
 
         <div class="card">
 
@@ -514,22 +686,50 @@ footer{
 
             <div class="price-list">
 
-                <div class="item"><span>Педикюр С Покрытием Гель-Лак</span><span>2300</span></div>
+                <div class="item"><span>Полный педикюр + гель-лак</span><span>2300</span></div>
 
-                <div class="item"><span>Педикюр Без Покрытия</span><span>2000</span></div>
+                <div class="item"><span>Педикюр пальчики + гель-лак</span><span>1800</span></div>
 
-                <div class="item"><span>Педикюр Пальчики С Покрытием Гель-Лак</span><span>1800</span></div>
+                <div class="item"><span>Педикюр без покрытия</span><span>2000</span></div>
 
-                <div class="item"><span>Педикюр Пальчики Без Покрытия</span><span>1300</span></div>
+                <div class="item"><span>Педикюр пальчики без покрытия</span><span>1300</span></div>
 
-                <div class="item"><span>Педикюр Стоп</span><span>1200</span></div>
+                <div class="item"><span>Обработка стоп</span><span>1200</span></div>
 
-                <div class="item"><span>Мужской Педикюр Пальчики</span><span>1700</span></div>
+                <div class="item"><span>Японский педикюр</span><span>2400</span></div>
 
-                <div class="item"><span>Мужской Педикюр</span><span>2300</span></div>
+                <div class="item"><span>Холодная SPA - парафинотерапия для ног</span><span>600</span></div>
 
-                <div class="item"><span>Мужской Маникюр</span><span>1100</span></div>
+            </div>
 
+            <!-- ФРУКТОВЫЙ ПЕДИКЮР -->
+            <div class="fruit-section">
+                <div class="fruit-title">Фруктовый Педикюр</div>
+                <div class="fruit-brand">От бренда Fruit Pedicure</div>
+                
+                <div class="fruit-description">
+                    <strong>Современная, безопасная и невероятно эффективная процедура.</strong> В ее основе лежит научный подход, который работает не на поверхности, а помогает коже изнутри.
+                </div>
+
+                <div class="fruit-highlights">
+                    <div class="fruit-highlights-title">Состав абсолютно безопасен, подходит:</div>
+                    <div class="fruit-highlights-item">Беременным и кормящим мамам</div>
+                    <div class="fruit-highlights-item">Людям с чувствительной кожей</div>
+                    <div class="fruit-highlights-item">Клиентам с Диабетом</div>
+                    <div class="fruit-highlights-item">Детям и подросткам</div>
+                </div>
+
+                <div class="price-list">
+                    <div class="item"><span>Классический фруктовый педикюр</span><span>2800</span></div>
+
+                    <div class="item"><span>Щадящий педикюр</span><span>2600</span></div>
+
+                    <div class="item"><span>Работа с трещинами</span><span>3100</span></div>
+
+                    <div class="item"><span>SPA педикюр</span><span>2800</span></div>
+
+                    <div class="item"><span>BOTX от потливости и запаха</span><span>3500</span></div>
+                </div>
             </div>
 
         </div>
@@ -558,43 +758,31 @@ footer{
 
                 <div class="item"><span>Окрашивание Ресниц</span><span>600</span></div>
 
-                <div class="item"><span>Удаление Нежелательных Волос На Лице</span><span>1600</span></div>
+                <div class="item"><span>Удаление Нежелательных Волос На Лице</span><span>400</span></div>
 
             </div>
 
         </div>
 
-        
-
-        <!-- РЕСНИЦЫ -->
+        <!-- ДОПОЛНИТЕЛЬНО -->
 
         <div class="card">
 
-            <h3>Наращивание Ресниц</h3>
+            <h3>Дополнительно</h3>
 
             <div class="price-list">
 
-                <div class="item"><span>Классика</span><span>2000</span></div>
+                <div class="item"><span>Достраивание всех ногтей</span><span>200</span></div>
 
-                <div class="item"><span>Наращивание Ресниц 2D</span><span>2200</span></div>
+                <div class="item"><span>Дизайн</span><span>50-500</span></div>
 
-                <div class="item"><span>Наращивание Ресниц 3D</span><span>2400</span></div>
+                <div class="item"><span>Втирка</span><span>400</span></div>
 
-                <div class="item"><span>Наращивание Ресниц 4D</span><span>2600</span></div>
+                <div class="item"><span>Исправление всех клюющих, взлетных ногтей</span><span>400</span></div>
 
-                <div class="item"><span>Наращивание Углов</span><span>1800</span></div>
+                <div class="item"><span>Покрытие лаком</span><span>50</span></div>
 
-                <div class="item"><span>Нижние Наращивание</span><span>1100</span></div>
-
-                <div class="item"><span>Загущение</span><span>+100</span></div>
-
-                <div class="item"><span>Декоративные (Цветные Вставки, Стразы, Блестки)</span><span>200</span></div>
-
-                <div class="item"><span>Мокрый Эффект, Американка, Рванный, Лучики</span><span>150</span></div>
-
-                <div class="item"><span>Цветные Ресницы Полностью, Аниме</span><span>+250</span></div>
-
-                <div class="item"><span>Снятие Чужой Работы</span><span>+400</span></div>
+                <div class="item"><span>Холодная SPA – парафинотерапия для рук</span><span>500</span></div>
 
             </div>
 
@@ -603,6 +791,12 @@ footer{
     </div>
 
 </section>
+
+<div class="price-footer">
+    <div class="footer-note">
+        В каждую услугу входит: снятие, маникюр, починка 1 – 2 (взлетные, клюющие, трещины) ногтей, покрытие материалом.
+    </div>
+</div>
 
 <section class="contacts" id="location">
 
